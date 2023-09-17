@@ -1,5 +1,5 @@
 from typing import Union, Optional
-#from forwarder.modules.filters import FilterMessage
+from forwarder.modules.filters import FilterMessage
 from telegram import Update, Message, MessageId
 from telegram.error import ChatMigrated
 from telegram.ext import MessageHandler, filters, ContextTypes
@@ -16,9 +16,9 @@ async def send_message(
 async def forwarder(update: Update, _: ContextTypes.DEFAULT_TYPE) -> None:
     message = update.effective_message
     source = update.effective_chat
-#    filter_forward = FilterMessage(message)
-#    if filter_forward == 400:
-#        return 400
+    filter_forward = FilterMessage(message)
+    if filter_forward == 400:
+        return 400
     if not message or not source:
         return
 

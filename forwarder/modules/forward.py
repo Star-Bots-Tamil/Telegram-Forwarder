@@ -37,7 +37,8 @@ async def forwarder(update: Update, _: ContextTypes.DEFAULT_TYPE) -> None:
 
 FORWARD_HANDLER = MessageHandler(
     filters.Chat([source["chat_id"] for source in get_source()])
-    & ~filters.COMMAND | filters.Document | filters.VIDEO,
+    & ~filters.COMMAND
+    & ~filters.Document | filters.VIDEO,
     & ~filters.StatusUpdate.ALL,
     forwarder,
 )

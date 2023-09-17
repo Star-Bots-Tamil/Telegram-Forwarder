@@ -1,4 +1,4 @@
-9from typing import Union, Optional
+from typing import Union, Optional
 #from forwarder.modules.filters import FilterMessage
 from telegram import Update, Message, MessageId
 from telegram.error import ChatMigrated
@@ -49,3 +49,5 @@ bot.add_handler(FORWARD_HANDLER)
 # filters.ANIMATION    Filter Animations
 # filters.FORWARDED    Filter Forwarded Messages 
 # filters.AUDIO        Filter Audios
+# filters.POLL         Filter Polls (Quiz Message)
+# 

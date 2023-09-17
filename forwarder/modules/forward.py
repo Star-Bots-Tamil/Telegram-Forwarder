@@ -3,9 +3,10 @@ from typing import Union, Optional
 from telegram import Update, Message, MessageId
 from telegram.error import ChatMigrated
 from telegram.ext import MessageHandler, filters, ContextTypes
-
 from forwarder import bot, REMOVE_TAG, LOGGER
 from forwarder.utils import get_source, get_destenation, parse_topic
+
+mediafiles = filters.Document | filters.VIDEO
 
 async def send_message(
     message: Message, chat_id: int, thread_id: Optional[int] = None
@@ -25,9 +26,9 @@ async def forwarder(update: Update, _: ContextTypes.DEFAULT_TYPE) -> None:
 
     for chat in get_destenation(source.id):
         try:
-            await send_message(message, chat["chat_id"], thread_id=chat["thread_id"])
+            await send_message(message, mediafiles, chat["chat_id"], thread_id=chat["thread_id"])
         except ChatMigrated as err:
-            await send_message(message, err.new_chat_id)
+            await send_message(message, mediafiles, err.new_chat_id)
             LOGGER.warning(
                 f"Chat {chat} has been migrated to {err.new_chat_id}!! Edit the config file!!"
             )
@@ -40,8 +41,6 @@ FORWARD_HANDLER = MessageHandler(
     & ~filters.COMMAND
     & ~filters.StatusUpdate.ALL,
     forwarder,
-    filters.Document,
-    filters.VIDEO,
 )
 bot.add_handler(FORWARD_HANDLER)
 

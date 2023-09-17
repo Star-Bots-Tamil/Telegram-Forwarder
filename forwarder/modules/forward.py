@@ -40,7 +40,8 @@ FORWARD_HANDLER = MessageHandler(
     & ~filters.COMMAND
     & ~filters.StatusUpdate.ALL,
     forwarder,
-    filters.Document | filters.VIDEO,
+    filters.Document,
+    filters.VIDEO,
 )
 bot.add_handler(FORWARD_HANDLER)
 

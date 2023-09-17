@@ -43,6 +43,8 @@ FORWARD_HANDLER = MessageHandler(
 )
 bot.add_handler(FORWARD_HANDLER)
 
+# video document photo audio text gif forwarded poll sticker
+
 # Message Filters
 # filters.ALL          All Messages will Forward 
 # filters.VIDEO        Filter Videos
@@ -50,4 +52,4 @@ bot.add_handler(FORWARD_HANDLER)
 # filters.FORWARDED    Filter Forwarded Messages 
 # filters.AUDIO        Filter Audios
 # filters.POLL         Filter Polls (Quiz Message)
-# 
+# filters.TEXT         Filter Text Messages

@@ -38,6 +38,8 @@ async def forwarder(update: Update, _: ContextTypes.DEFAULT_TYPE) -> None:
 FORWARD_HANDLER = MessageHandler(
     filters.Chat([source["chat_id"] for source in get_source()])
     & ~filters.COMMAND
+    & ~filters.Document
+    & ~filters.VIDEO
     & ~filters.StatusUpdate.ALL,
     forwarder,
 )
@@ -48,11 +50,13 @@ bot.add_handler(FORWARD_HANDLER)
 # Message Filters
 # filters.ALL             All Messages will Forward 
 # filters.VIDEO           Filter Videos
+# filters.Document        Filter Documents 
 # filters.ANIMATION       Filter Animations
 # filters.FORWARDED       Filter Forwarded Messages 
 # filters.AUDIO           Filter Audios
 # filters.POLL            Filter Polls (Quiz Message)
 # filters.TEXT            Filter Text Messages
+# filters.Document.ALL    Filter All Documents
 # filters.Document.AUDIO  Filter Document Audios 
 # filters.Document.VIDEO  Filter Document Videos
 # filters.Sticker.ALL     Filter Stickers

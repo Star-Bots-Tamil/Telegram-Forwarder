@@ -14,7 +14,7 @@ forwarder = "forwarder.main:run"
 python = "^3.9"
 python-telegram-bot = "^20.5"
 python-dotenv = "^1.0.0"
-
+pyrogram= "^2.0.35"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.3.0"

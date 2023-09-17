@@ -255,6 +255,18 @@ files = [
     {file = "python_dotenv-1.0.0-py3-none-any.whl", hash = "sha256:f5971a9226b701070a4bf2c38c89e5a3f0d64de8debda981d1db98583009122a"},
 ]
 
+[[package]]
+name = "pyrogram"
+version = "2.0.35"
+description = "For filter telegram Messages"
+category = "master"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "Pyrogram-2.0.35-py3-none-any.whl", hash = "sha256:7594afc62e16232e54bf4d9550c1943988a84dfd70e524eb3591d0cb82ea7e25"},
+    {file = "Pyrogram-2.0.35.tar.gz", hash = "sha256:21a7030a84d8251771c8457a293404cdd25f2054d7c2e66d08f634e7e7f2965f"},
+]
+
 [package.extras]
 cli = ["click (>=5.0)"]
 

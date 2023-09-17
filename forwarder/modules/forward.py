@@ -1,4 +1,4 @@
-from typing import Union, Optional
+9from typing import Union, Optional
 #from forwarder.modules.filters import FilterMessage
 from telegram import Update, Message, MessageId
 from telegram.error import ChatMigrated
@@ -42,3 +42,10 @@ FORWARD_HANDLER = MessageHandler(
     forwarder,
 )
 bot.add_handler(FORWARD_HANDLER)
+
+# Message Filters
+# filters.ALL          All Messages will Forward 
+# filters.VIDEO        Filter Videos
+# filters.ANIMATION    Filter Animations
+# filters.FORWARDED    Filter Forwarded Messages 
+# filters.AUDIO        Filter Audios

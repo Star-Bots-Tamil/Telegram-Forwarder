@@ -43,7 +43,7 @@ FORWARD_HANDLER = MessageHandler(
 )
 bot.add_handler(FORWARD_HANDLER)
 
-# document photo
+# document
 
 # Message Filters
 # filters.ALL             All Messages will Forward 
@@ -56,3 +56,6 @@ bot.add_handler(FORWARD_HANDLER)
 # filters.Document.AUDIO  Filter Document Audios 
 # filters.Document.VIDEO  Filter Document Videos
 # filters.Sticker.ALL     Filter Stickers
+# filters.Document.IMAGE  Filter Document Image
+# filters.Document.PDF    Filter Document PDF
+# filters.PHOTO           Filter Photo

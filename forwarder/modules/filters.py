@@ -2,6 +2,7 @@ import os
 from pyrogram.types import Message
 
 FILES_FILTERS = "video document"
+POST_FILTERS = "photo text gif sticker"
 DEFAULT_FILTERS = "video document photo audio text gif forwarded poll sticker"
 FORWARD_FILTERS = list(set(x for x in os.environ.get("FORWARD_FILTERS", FILES_FILTERS).split()))    
 

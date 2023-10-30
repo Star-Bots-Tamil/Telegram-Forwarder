@@ -1,7 +1,8 @@
 [
     {
         "source": -1001822541447,
-        "destination": [-1001871766752]
+        "destination": [-1001871766752],
+        "filters": all
     },
     {
         "source": -10098765432,

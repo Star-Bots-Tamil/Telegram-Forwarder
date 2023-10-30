@@ -2,7 +2,7 @@
     {
         "source": -1001822541447,
         "destination": [-1001871766752],
-        "filters": [document, video, photo]
+        "filter": [document, video, photo]
     },
     {
         "source": -10098765432,
